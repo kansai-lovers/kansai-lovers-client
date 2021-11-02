@@ -1,23 +1,12 @@
-import { Button } from "@mui/material";
 import { NextPage } from "next";
-import { getHello } from "../lib/api";
+import { Layout } from "src/components/layout/Layout";
 
-type Props = {
-  data: { value: string };
-};
-
-const Home: NextPage<Props> = ({ data }) => {
-  return <Button>{data.value}</Button>;
-};
-
-export const getStaticProps = async () => {
-  const data = await getHello();
-
-  return {
-    props: {
-      data,
-    },
-  };
+const Home: NextPage = () => {
+  return (
+    <Layout title="Home | Skillme">
+      <p>Hello World</p>
+    </Layout>
+  );
 };
 
 export default Home;

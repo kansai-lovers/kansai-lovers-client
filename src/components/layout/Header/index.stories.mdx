@@ -1,0 +1,12 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { Header } from ".";
+
+<Meta title="lauout/Header" component={Header} />
+
+# Header
+
+export const Template = () => <Header />;
+
+<Canvas>
+  <Story name="Sample">{Template.bind({})}</Story>
+</Canvas>
