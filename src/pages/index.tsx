@@ -1,5 +1,5 @@
+import { Button } from "@mui/material";
 import { NextPage } from "next";
-import { Button } from "../components/Button/styled";
 import { getHello } from "../lib/api";
 
 type Props = {
