@@ -39,7 +39,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="ja">
         <Head>
-          <meta name="viewport" content="initial-scale=1, width=device-width" />
           <meta name="theme-color" content={theme.palette.primary.main} />
           <link
             rel="stylesheet"

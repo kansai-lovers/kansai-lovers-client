@@ -1,12 +1,12 @@
 import { NextPage } from "next";
 import { Layout } from "src/components/shares/Layout";
 
-const Home: NextPage = () => {
+const Profile: NextPage = () => {
   return (
-    <Layout title="Home | Skillme">
+    <Layout title="Profile | Skillme">
       <p>Hello World</p>
     </Layout>
   );
 };
 
-export default Home;
+export default Profile;
