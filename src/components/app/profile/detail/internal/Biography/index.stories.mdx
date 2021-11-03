@@ -1,0 +1,12 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { Biography } from ".";
+
+<Meta title="app/profile/detail/Biography" component={Biography} />
+
+# Biography
+
+export const Template = () => <Biography />;
+
+<Canvas>
+  <Story name="Sample">{Template.bind({})}</Story>
+</Canvas>

@@ -10,7 +10,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./public  -p 6006",
     "prettier": "prettier --write \"{src,}/**/*.ts?(x)\"",
     "lint": "eslint \"{src,}/**/*.ts?(x)\" --fix",
     "build-storybook": "build-storybook"

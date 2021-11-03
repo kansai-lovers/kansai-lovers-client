@@ -1,0 +1,16 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { Paper } from ".";
+
+<Meta title="shares/Paper" component={Paper} />
+
+# Paper
+
+export const Template = () => (
+  <Paper width="200px" height="200px" pt="16px" pr="16px" pb="16px" pl="16px">
+    Sample
+  </Paper>
+);
+
+<Canvas>
+  <Story name="Sample">{Template.bind({})}</Story>
+</Canvas>
