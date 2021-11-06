@@ -8,7 +8,7 @@ cp-env:
 
 .PHONY: install
 install:
-	yarn install
+	find . -type d -name node_modules -prune -o -type f -name package.json -execdir yarn install \;
 
 .PHONY: dev
 dev:

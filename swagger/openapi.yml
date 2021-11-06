@@ -1,4 +1,4 @@
-openapi: "3.0.0"
+openapi: 3.0.0
 info:
   description: This is a Skillme API Document.
   version: 1.0.0
@@ -105,8 +105,8 @@ paths:
                       tag: design
                       description: string
                       stamps:
-                        "+1": 0
-                        "-1": 0
+                        good: 0
+                        bad: 0
                         laugh: 0
                         hooray: 0
                         confused: 0
@@ -146,6 +146,7 @@ paths:
                     id: 1
                     avatar_url: "http://example.com"
                     url: "http://github.com/hirokikondo86"
+                    join_date: 2021.4 ~ now
         "400":
           description: Bad Request
         "401":
@@ -174,6 +175,7 @@ paths:
                       id: 1
                       avatar_url: "http://example.com"
                       url: "http://github.com/hirokikondo86"
+                      join_date: 2021.4 ~ now
         "400":
           description: Bad Request
         "401":
@@ -182,7 +184,6 @@ paths:
           description: Not Found
       operationId: getMembers
       description: Get members.
-
 components:
   schemas:
     Stamp:
@@ -203,7 +204,7 @@ components:
         communication:
           type: number
           format: float
-      examples:
+      x-examples:
         example:
           design: 49.57
           implementation: 30.28
@@ -226,7 +227,7 @@ components:
         communication:
           type: number
           format: float
-      examples:
+      x-examples:
         example:
           design: 5
           implementation: 3.5
@@ -239,7 +240,7 @@ components:
         - username
         - sendDate
         - tag
-        - description
+        - text
         - stamps
       properties:
         username:
@@ -249,7 +250,7 @@ components:
           format: date-time
         tag:
           $ref: "#/components/schemas/SkillTag"
-        description:
+        text:
           type: string
           nullable: true
         stamps:
@@ -264,8 +265,6 @@ components:
             - rocket
             - eyes
           properties:
-            # MEMO: GitHub APIに合わせて"+1","-1"にしたかったが、 generateした際に"_1"に変換されて
-            # openapi.validator: validation errors が発生するのでgood, badに変更
             good:
               type: number
             bad:
@@ -282,12 +281,12 @@ components:
               type: number
             eyes:
               type: number
-      examples:
+      x-examples:
         example:
           username: hirokikondo86
           sendDate: "2019-08-24T14:15:22Z"
           tag: communication
-          description: string
+          text: string
           stamps:
             good: 0
             bad: 0
@@ -307,17 +306,20 @@ components:
             - design
             - implementation
             - communication
-      examples:
+      x-examples:
         example: design
     Member:
       title: Member
       type: object
       description: Member
-      required:
-        - login
-        - id
-        - avatar_url
-        - url
+      x-examples:
+        example:
+          login: hirokikondo86
+          id: 1
+          avatar_url: "https://github.com/hirokikondo86/avatar"
+          url: "https://github.com/hirokikondo86"
+          join_date: "2021.4 ~ now"
+          tags: ["red", "blue"]
       properties:
         login:
           type: string
@@ -330,10 +332,39 @@ components:
         url:
           type: string
           format: uri
-            examples:
-      examples:
+        join_date:
+          type: string
+        tags:
+          type: array
+          items:
+            $ref: "#/components/schemas/Tag"
+      required:
+        - login
+        - id
+        - avatar_url
+        - url
+        - join_date
+    Tag:
+      title: Tag
+      type: object
+      properties:
+        value:
+          type: string
+        color:
+          type: string
+          enum:
+            - blue
+            - lightBlue
+            - green
+            - yellowGreen
+            - yellow
+            - orange
+            - red
+      required:
+        - value
+        - color
+      x-examples:
         example:
-          login: hirokikondo86
-          id: 1
-          avatar_url: https://github.com/hirokikondo86/avatar
-          url: https://github.com/hirokikondo86
+          value: フルサイクルエンジニア
+          color: blue
+      description: Tag
