@@ -87,5 +87,5 @@ DOCUMENT_CLIENT:=typescript-axios
 
 .PHONY: swagger/gen
 swagger/gen:
-	docker compose run --rm $(DOCUMENT_SERVICE) generate -i /app/openapi.yml -l $(DOCUMENT_MOCK) -o /app/generate/server &\
-	docker compose run --rm $(DOCUMENT_SERVICE) generate -i /app/openapi.yml -l $(DOCUMENT_CLIENT) -o /app/generate/client
+	docker compose run --rm $(DOCUMENT_SERVICE) generate -i /app/openapi.yml -l $(DOCUMENT_MOCK) -o /app/generate/server -D modelPropertyNaming=original &\
+	docker compose run --rm $(DOCUMENT_SERVICE) generate -i /app/openapi.yml -l $(DOCUMENT_CLIENT) -o /app/generate/client -D modelPropertyNaming=original

@@ -34,7 +34,7 @@ export interface Member {
    * @type {string}
    * @memberof Member
    */
-  avatarUrl: any;
+  avatar_url: any;
   /**
    *
    * @type {string}
@@ -46,7 +46,7 @@ export interface Member {
    * @type {string}
    * @memberof Member
    */
-  joinDate: any;
+  join_date: any;
   /**
    *
    * @type {Array&lt;Tag&gt;}

@@ -20,14 +20,11 @@ const Profile: NextPage<Props> = ({ member }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // TODO:
-  // const { data } = await api().getMembers();
+  const { data } = await api().getMembers();
 
-  // const paths = data.map((member) => ({
-  //   params: { id: String(member.id) },
-  // }));
-
-  const paths = [{ params: { id: "1" } }, { params: { id: "2" } }];
+  const paths = data.map((member) => ({
+    params: { id: String(member.id) },
+  }));
 
   return { paths, fallback: "blocking" };
 };

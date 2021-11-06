@@ -14,8 +14,8 @@ export const Detail: VFC<Props> = ({ member }) => {
       <Biography
         username={member.login}
         repoUrl={member.url}
-        avatarUrl={member.avatarUrl}
-        joinDate={member.joinDate}
+        avatarUrl={member.avatar_url}
+        joinDate={member.join_date}
         tags={member.tags}
       />
       <Box mb="48px" />
