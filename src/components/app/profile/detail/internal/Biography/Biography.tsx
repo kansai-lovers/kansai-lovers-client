@@ -4,13 +4,19 @@ import { GitHub as GitHubIcon } from "@mui/icons-material";
 import * as Styled from "./styled";
 import { Tag } from "src/components/shares/Tag";
 import { Member } from "src/@types/generate/models";
-import { Chip } from "src/@types/generate/models/chip";
+import { Chip, ChipColorEnum } from "src/@types/generate/models/chip";
 
 type Props = {
   member: Member;
 };
 
 export const Biography: VFC<Props> = ({ member }) => {
+  const chips: Chip[] = [
+    { value: "フルサイクルエンジニア", color: ChipColorEnum.Red },
+    { value: "fluct", color: ChipColorEnum.Blue },
+    { value: "Zucks", color: ChipColorEnum.Green },
+  ];
+
   return (
     <Box display="flex" flexWrap="wrap" alignItems="center" gap="24px">
       <Box display="flex">
@@ -51,11 +57,14 @@ export const Biography: VFC<Props> = ({ member }) => {
         >
           <Typography variant="h6">入社時期：{member.join_date}</Typography>
           <Box display="flex" flexWrap="wrap" gap="6px">
-            {member.chips?.map((chip: Chip, i: number) => (
-              <Tag key={i} color={chip.color}>
-                {chip.value}
-              </Tag>
-            )) ?? "タグがありません。"}
+            {
+              // TODO: APIの実装が出来次第修正
+              chips.map((chip, i: number) => (
+                <Tag key={i} color={chip.color}>
+                  {chip.value}
+                </Tag>
+              )) ?? "タグがありません。"
+            }
           </Box>
         </Box>
       </Box>

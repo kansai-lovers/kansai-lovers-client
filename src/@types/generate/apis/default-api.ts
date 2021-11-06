@@ -16,10 +16,9 @@ import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { InlineResponse200 } from '../models';
 import { Member } from '../models';
 import { SkillScore } from '../models';
-import { Stamp } from '../models';
-import { Thread } from '../models';
 /**
  * DefaultApi - axios parameter creator
  * @export
@@ -67,6 +66,46 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
+         * Get a member messages.
+         * @summary Get a member messages.
+         * @param {string} memberId memberId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getMemberMessagesById: async (memberId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'memberId' is not null or undefined
+            if (memberId === null || memberId === undefined) {
+                throw new RequiredError('memberId','Required parameter memberId was null or undefined when calling getMemberMessagesById.');
+            }
+            const localVarPath = `/members/{memberId}/messages`
+                .replace(`{${"memberId"}}`, encodeURIComponent(String(memberId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            const query = new URLSearchParams(localVarUrlObj.search);
+            for (const key in localVarQueryParameter) {
+                query.set(key, localVarQueryParameter[key]);
+            }
+            for (const key in options.query) {
+                query.set(key, options.query[key]);
+            }
+            localVarUrlObj.search = (new URLSearchParams(query)).toString();
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Get a member skill score.
          * @summary Get a member skill score.
          * @param {string} memberId memberId
@@ -79,86 +118,6 @@ export const DefaultApiAxiosParamCreator = function (configuration?: Configurati
                 throw new RequiredError('memberId','Required parameter memberId was null or undefined when calling getMemberSkillScoreById.');
             }
             const localVarPath = `/members/{memberId}/skillScores`
-                .replace(`{${"memberId"}}`, encodeURIComponent(String(memberId)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            const query = new URLSearchParams(localVarUrlObj.search);
-            for (const key in localVarQueryParameter) {
-                query.set(key, localVarQueryParameter[key]);
-            }
-            for (const key in options.query) {
-                query.set(key, options.query[key]);
-            }
-            localVarUrlObj.search = (new URLSearchParams(query)).toString();
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get a member got stamps.
-         * @summary Get a member got stamps
-         * @param {number} memberId memberId
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getMemberStampsById: async (memberId: number, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'memberId' is not null or undefined
-            if (memberId === null || memberId === undefined) {
-                throw new RequiredError('memberId','Required parameter memberId was null or undefined when calling getMemberStampsById.');
-            }
-            const localVarPath = `/members/{memberId}/stamps`
-                .replace(`{${"memberId"}}`, encodeURIComponent(String(memberId)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, 'https://example.com');
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            const query = new URLSearchParams(localVarUrlObj.search);
-            for (const key in localVarQueryParameter) {
-                query.set(key, localVarQueryParameter[key]);
-            }
-            for (const key in options.query) {
-                query.set(key, options.query[key]);
-            }
-            localVarUrlObj.search = (new URLSearchParams(query)).toString();
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: localVarUrlObj.pathname + localVarUrlObj.search + localVarUrlObj.hash,
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Get a member threads.
-         * @summary Get a member threads.
-         * @param {string} memberId memberId
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getMemberThreadsById: async (memberId: string, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'memberId' is not null or undefined
-            if (memberId === null || memberId === undefined) {
-                throw new RequiredError('memberId','Required parameter memberId was null or undefined when calling getMemberThreadsById.');
-            }
-            const localVarPath = `/members/{memberId}/threads`
                 .replace(`{${"memberId"}}`, encodeURIComponent(String(memberId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, 'https://example.com');
@@ -244,6 +203,20 @@ export const DefaultApiFp = function(configuration?: Configuration) {
             };
         },
         /**
+         * Get a member messages.
+         * @summary Get a member messages.
+         * @param {string} memberId memberId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getMemberMessagesById(memberId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InlineResponse200>> {
+            const localVarAxiosArgs = await DefaultApiAxiosParamCreator(configuration).getMemberMessagesById(memberId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
          * Get a member skill score.
          * @summary Get a member skill score.
          * @param {string} memberId memberId
@@ -252,34 +225,6 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          */
         async getMemberSkillScoreById(memberId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SkillScore>> {
             const localVarAxiosArgs = await DefaultApiAxiosParamCreator(configuration).getMemberSkillScoreById(memberId, options);
-            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
-                return axios.request(axiosRequestArgs);
-            };
-        },
-        /**
-         * Get a member got stamps.
-         * @summary Get a member got stamps
-         * @param {number} memberId memberId
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async getMemberStampsById(memberId: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Stamp>> {
-            const localVarAxiosArgs = await DefaultApiAxiosParamCreator(configuration).getMemberStampsById(memberId, options);
-            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
-                return axios.request(axiosRequestArgs);
-            };
-        },
-        /**
-         * Get a member threads.
-         * @summary Get a member threads.
-         * @param {string} memberId memberId
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async getMemberThreadsById(memberId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Thread>>> {
-            const localVarAxiosArgs = await DefaultApiAxiosParamCreator(configuration).getMemberThreadsById(memberId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -318,6 +263,16 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
             return DefaultApiFp(configuration).getMemberById(memberId, options).then((request) => request(axios, basePath));
         },
         /**
+         * Get a member messages.
+         * @summary Get a member messages.
+         * @param {string} memberId memberId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getMemberMessagesById(memberId: string, options?: any): AxiosPromise<InlineResponse200> {
+            return DefaultApiFp(configuration).getMemberMessagesById(memberId, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Get a member skill score.
          * @summary Get a member skill score.
          * @param {string} memberId memberId
@@ -326,26 +281,6 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          */
         getMemberSkillScoreById(memberId: string, options?: any): AxiosPromise<SkillScore> {
             return DefaultApiFp(configuration).getMemberSkillScoreById(memberId, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get a member got stamps.
-         * @summary Get a member got stamps
-         * @param {number} memberId memberId
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getMemberStampsById(memberId: number, options?: any): AxiosPromise<Stamp> {
-            return DefaultApiFp(configuration).getMemberStampsById(memberId, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get a member threads.
-         * @summary Get a member threads.
-         * @param {string} memberId memberId
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        getMemberThreadsById(memberId: string, options?: any): AxiosPromise<Array<Thread>> {
-            return DefaultApiFp(configuration).getMemberThreadsById(memberId, options).then((request) => request(axios, basePath));
         },
         /**
          * Get members.
@@ -378,6 +313,17 @@ export class DefaultApi extends BaseAPI {
         return DefaultApiFp(this.configuration).getMemberById(memberId, options).then((request) => request(this.axios, this.basePath));
     }
     /**
+     * Get a member messages.
+     * @summary Get a member messages.
+     * @param {string} memberId memberId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DefaultApi
+     */
+    public getMemberMessagesById(memberId: string, options?: any) {
+        return DefaultApiFp(this.configuration).getMemberMessagesById(memberId, options).then((request) => request(this.axios, this.basePath));
+    }
+    /**
      * Get a member skill score.
      * @summary Get a member skill score.
      * @param {string} memberId memberId
@@ -387,28 +333,6 @@ export class DefaultApi extends BaseAPI {
      */
     public getMemberSkillScoreById(memberId: string, options?: any) {
         return DefaultApiFp(this.configuration).getMemberSkillScoreById(memberId, options).then((request) => request(this.axios, this.basePath));
-    }
-    /**
-     * Get a member got stamps.
-     * @summary Get a member got stamps
-     * @param {number} memberId memberId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public getMemberStampsById(memberId: number, options?: any) {
-        return DefaultApiFp(this.configuration).getMemberStampsById(memberId, options).then((request) => request(this.axios, this.basePath));
-    }
-    /**
-     * Get a member threads.
-     * @summary Get a member threads.
-     * @param {string} memberId memberId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DefaultApi
-     */
-    public getMemberThreadsById(memberId: string, options?: any) {
-        return DefaultApiFp(this.configuration).getMemberThreadsById(memberId, options).then((request) => request(this.axios, this.basePath));
     }
     /**
      * Get members.
