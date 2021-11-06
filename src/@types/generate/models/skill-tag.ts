@@ -16,5 +16,4 @@
  * @export
  * @interface SkillTag
  */
-export interface SkillTag {
-}
+export interface SkillTag {}

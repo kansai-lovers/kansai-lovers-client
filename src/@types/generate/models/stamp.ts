@@ -17,22 +17,22 @@
  * @interface Stamp
  */
 export interface Stamp {
-    /**
-     * 
-     * @type {number}
-     * @memberof Stamp
-     */
-    design?: any;
-    /**
-     * 
-     * @type {number}
-     * @memberof Stamp
-     */
-    implementation?: any;
-    /**
-     * 
-     * @type {number}
-     * @memberof Stamp
-     */
-    communication?: any;
+  /**
+   *
+   * @type {number}
+   * @memberof Stamp
+   */
+  design: any;
+  /**
+   *
+   * @type {number}
+   * @memberof Stamp
+   */
+  implementation: any;
+  /**
+   *
+   * @type {number}
+   * @memberof Stamp
+   */
+  communication: any;
 }

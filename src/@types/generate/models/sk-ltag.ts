@@ -12,27 +12,8 @@
  * Do not edit the class manually.
  */
 /**
- * Member skill score
+ * Skill tag
  * @export
- * @interface SkillScore
+ * @interface SkLTag
  */
-export interface SkillScore {
-  /**
-   *
-   * @type {number}
-   * @memberof SkillScore
-   */
-  design: any;
-  /**
-   *
-   * @type {number}
-   * @memberof SkillScore
-   */
-  implementation: any;
-  /**
-   *
-   * @type {number}
-   * @memberof SkillScore
-   */
-  communication: any;
-}
+export interface SkLTag {}
