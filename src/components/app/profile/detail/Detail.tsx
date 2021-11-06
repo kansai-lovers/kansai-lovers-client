@@ -11,13 +11,7 @@ type Props = {
 export const Detail: VFC<Props> = ({ member }) => {
   return (
     <Box px="32px" py="48px">
-      <Biography
-        username={member.login}
-        repoUrl={member.url}
-        avatarUrl={member.avatar_url}
-        joinDate={member.join_date}
-        tags={member.tags}
-      />
+      <Biography member={member} />
       <Box mb="48px" />
       <Stats username={member.login} />
     </Box>

@@ -9,7 +9,7 @@ info:
     name: Apache 2.0
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
 servers:
-  - url: "http://localhost:8080"
+  - url: "http://localhost:8080/api/v1"
 paths:
   "/members/{memberId}/stamps":
     get:
@@ -103,7 +103,7 @@ paths:
                     - username: hirokikondo86
                       sendDate: "2019-08-24T14:15:22Z"
                       tag: design
-                      description: string
+                      text: string
                       stamps:
                         good: 0
                         bad: 0
@@ -319,7 +319,7 @@ components:
           avatar_url: "https://github.com/hirokikondo86/avatar"
           url: "https://github.com/hirokikondo86"
           join_date: "2021.4 ~ now"
-          tags: ["red", "blue"]
+          chips: ["red", "blue"]
       properties:
         login:
           type: string
@@ -334,18 +334,20 @@ components:
           format: uri
         join_date:
           type: string
-        tags:
+        chips:
           type: array
           items:
-            $ref: "#/components/schemas/Tag"
+            $ref: "#/components/schemas/Chip"
+          nullable: true
       required:
         - login
         - id
         - avatar_url
         - url
         - join_date
-    Tag:
-      title: Tag
+        - chips
+    Chip:
+      title: Chip
       type: object
       properties:
         value:
@@ -367,4 +369,4 @@ components:
         example:
           value: フルサイクルエンジニア
           color: blue
-      description: Tag
+      description: Chip

@@ -49,8 +49,8 @@ export interface Member {
     join_date: any;
     /**
      * 
-     * @type {Array&lt;Tag&gt;}
+     * @type {Array&lt;Chip&gt;}
      * @memberof Member
      */
-    tags?: any;
+    chips: any | null;
 }
