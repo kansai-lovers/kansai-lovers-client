@@ -17,28 +17,28 @@
  * @interface Member
  */
 export interface Member {
-    /**
-     * 
-     * @type {string}
-     * @memberof Member
-     */
-    login?: any;
-    /**
-     * 
-     * @type {number}
-     * @memberof Member
-     */
-    id?: any;
-    /**
-     * 
-     * @type {string}
-     * @memberof Member
-     */
-    avatarUrl?: any;
-    /**
-     * 
-     * @type {string}
-     * @memberof Member
-     */
-    url?: any;
+  /**
+   *
+   * @type {string}
+   * @memberof Member
+   */
+  login: any;
+  /**
+   *
+   * @type {number}
+   * @memberof Member
+   */
+  id: any;
+  /**
+   *
+   * @type {string}
+   * @memberof Member
+   */
+  avatarUrl: any;
+  /**
+   *
+   * @type {string}
+   * @memberof Member
+   */
+  url: any;
 }
