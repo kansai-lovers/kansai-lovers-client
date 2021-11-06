@@ -203,7 +203,7 @@ components:
         communication:
           type: number
           format: float
-      examples:
+      x-examples:
         example:
           design: 49.57
           implementation: 30.28
@@ -226,7 +226,7 @@ components:
         communication:
           type: number
           format: float
-      examples:
+      x-examples:
         example:
           design: 5
           implementation: 3.5
@@ -282,7 +282,7 @@ components:
               type: number
             eyes:
               type: number
-      examples:
+      x-examples:
         example:
           username: hirokikondo86
           sendDate: "2019-08-24T14:15:22Z"
@@ -307,7 +307,7 @@ components:
             - design
             - implementation
             - communication
-      examples:
+      x-examples:
         example: design
     Member:
       title: Member
@@ -330,8 +330,7 @@ components:
         url:
           type: string
           format: uri
-            examples:
-      examples:
+      x-examples:
         example:
           login: hirokikondo86
           id: 1
