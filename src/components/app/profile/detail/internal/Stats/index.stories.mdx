@@ -1,0 +1,21 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { Stats } from ".";
+
+<Meta title="app/profile/detail/Stats" component={Stats} />
+
+# Stats
+
+export const Template = () => (
+  <Stats
+    username="hirokikondo86"
+    stamp={{
+      design: 49.57,
+      implementation: 30.28,
+      communication: 20.15,
+    }}
+  />
+);
+
+<Canvas>
+  <Story name="Sample">{Template.bind({})}</Story>
+</Canvas>
