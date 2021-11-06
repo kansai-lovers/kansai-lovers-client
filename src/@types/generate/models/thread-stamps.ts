@@ -12,57 +12,57 @@
  * Do not edit the class manually.
  */
 /**
- *
+ * 
  * @export
  * @interface ThreadStamps
  */
 export interface ThreadStamps {
-  /**
-   *
-   * @type {number}
-   * @memberof ThreadStamps
-   */
-  good: any;
-  /**
-   *
-   * @type {number}
-   * @memberof ThreadStamps
-   */
-  bad: any;
-  /**
-   *
-   * @type {number}
-   * @memberof ThreadStamps
-   */
-  laugh: any;
-  /**
-   *
-   * @type {number}
-   * @memberof ThreadStamps
-   */
-  hooray: any;
-  /**
-   *
-   * @type {number}
-   * @memberof ThreadStamps
-   */
-  confused: any;
-  /**
-   *
-   * @type {number}
-   * @memberof ThreadStamps
-   */
-  heart: any;
-  /**
-   *
-   * @type {number}
-   * @memberof ThreadStamps
-   */
-  rocket: any;
-  /**
-   *
-   * @type {number}
-   * @memberof ThreadStamps
-   */
-  eyes: any;
+    /**
+     * 
+     * @type {number}
+     * @memberof ThreadStamps
+     */
+    good: any;
+    /**
+     * 
+     * @type {number}
+     * @memberof ThreadStamps
+     */
+    bad: any;
+    /**
+     * 
+     * @type {number}
+     * @memberof ThreadStamps
+     */
+    laugh: any;
+    /**
+     * 
+     * @type {number}
+     * @memberof ThreadStamps
+     */
+    hooray: any;
+    /**
+     * 
+     * @type {number}
+     * @memberof ThreadStamps
+     */
+    confused: any;
+    /**
+     * 
+     * @type {number}
+     * @memberof ThreadStamps
+     */
+    heart: any;
+    /**
+     * 
+     * @type {number}
+     * @memberof ThreadStamps
+     */
+    rocket: any;
+    /**
+     * 
+     * @type {number}
+     * @memberof ThreadStamps
+     */
+    eyes: any;
 }

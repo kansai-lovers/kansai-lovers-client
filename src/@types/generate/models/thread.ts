@@ -17,34 +17,34 @@
  * @interface Thread
  */
 export interface Thread {
-  /**
-   *
-   * @type {string}
-   * @memberof Thread
-   */
-  username: any;
-  /**
-   *
-   * @type {Date}
-   * @memberof Thread
-   */
-  sendDate: any;
-  /**
-   *
-   * @type {SkillTag}
-   * @memberof Thread
-   */
-  tag: any;
-  /**
-   *
-   * @type {string}
-   * @memberof Thread
-   */
-  text: any | null;
-  /**
-   *
-   * @type {ThreadStamps}
-   * @memberof Thread
-   */
-  stamps: any;
+    /**
+     * 
+     * @type {string}
+     * @memberof Thread
+     */
+    username: any;
+    /**
+     * 
+     * @type {Date}
+     * @memberof Thread
+     */
+    sendDate: any;
+    /**
+     * 
+     * @type {SkillTag}
+     * @memberof Thread
+     */
+    tag: any;
+    /**
+     * 
+     * @type {string}
+     * @memberof Thread
+     */
+    text: any | null;
+    /**
+     * 
+     * @type {ThreadStamps}
+     * @memberof Thread
+     */
+    stamps: any;
 }

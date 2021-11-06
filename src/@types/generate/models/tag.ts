@@ -17,30 +17,31 @@
  * @interface Tag
  */
 export interface Tag {
-  /**
-   *
-   * @type {string}
-   * @memberof Tag
-   */
-  value: any;
-  /**
-   *
-   * @type {string}
-   * @memberof Tag
-   */
-  color: TagColorEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof Tag
+     */
+    value: any;
+    /**
+     * 
+     * @type {string}
+     * @memberof Tag
+     */
+    color: TagColorEnum;
 }
 
 /**
- * @export
- * @enum {string}
- */
+    * @export
+    * @enum {string}
+    */
 export enum TagColorEnum {
-  Blue = "blue",
-  LightBlue = "lightBlue",
-  Green = "green",
-  YellowGreen = "yellowGreen",
-  Yellow = "yellow",
-  Orange = "orange",
-  Red = "red",
+    Blue = 'blue',
+    LightBlue = 'lightBlue',
+    Green = 'green',
+    YellowGreen = 'yellowGreen',
+    Yellow = 'yellow',
+    Orange = 'orange',
+    Red = 'red'
 }
+

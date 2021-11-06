@@ -17,22 +17,22 @@
  * @interface SkillScore
  */
 export interface SkillScore {
-  /**
-   *
-   * @type {number}
-   * @memberof SkillScore
-   */
-  design: any;
-  /**
-   *
-   * @type {number}
-   * @memberof SkillScore
-   */
-  implementation: any;
-  /**
-   *
-   * @type {number}
-   * @memberof SkillScore
-   */
-  communication: any;
+    /**
+     * 
+     * @type {number}
+     * @memberof SkillScore
+     */
+    design: any;
+    /**
+     * 
+     * @type {number}
+     * @memberof SkillScore
+     */
+    implementation: any;
+    /**
+     * 
+     * @type {number}
+     * @memberof SkillScore
+     */
+    communication: any;
 }
