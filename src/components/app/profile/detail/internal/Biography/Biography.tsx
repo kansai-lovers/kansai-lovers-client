@@ -1,15 +1,27 @@
-import Image from "next/image";
+import { VFC } from "react";
 import { Box, Typography } from "@mui/material";
 import { GitHub as GitHubIcon } from "@mui/icons-material";
 import * as Styled from "./styled";
-import { Paper } from "src/components/shares/Paper";
+import { Tag } from "src/components/shares/Tag";
+import { Member } from "src/@types/generate/models";
+import { Chip, ChipColorEnum } from "src/@types/generate/models/chip";
 
-export const Biography = () => {
+type Props = {
+  member: Member;
+};
+
+export const Biography: VFC<Props> = ({ member }) => {
+  const chips: Chip[] = [
+    { value: "フルサイクルエンジニア", color: ChipColorEnum.Red },
+    { value: "fluct", color: ChipColorEnum.Blue },
+    { value: "Zucks", color: ChipColorEnum.Green },
+  ];
+
   return (
-    <Box display="flex" gap="24px" flexWrap="wrap">
+    <Box display="flex" flexWrap="wrap" alignItems="center" gap="24px">
       <Box display="flex">
         <Styled.StyledImage
-          src="/octcat.png"
+          src={member.avatar_url}
           width="100"
           height="100"
           alt="user"
@@ -21,35 +33,39 @@ export const Biography = () => {
           p="16px"
         >
           <Typography variant="h4" fontWeight="bold">
-            Hiroki Kondo
+            {member.login}
           </Typography>
           <Box display="flex" gap="6px" alignItems="center">
             <GitHubIcon fontSize="small" />
-            <Typography variant="h6">hirokikondo86</Typography>
+            <a href={member.url}>
+              <Typography variant="h6">{member.login}</Typography>
+            </a>
           </Box>
         </Box>
       </Box>
       <Box
         display="flex"
         flexDirection="column"
-        justifyContent="space-between"
+        justifyContent="center"
         height="105px"
       >
-        <Paper pt="12px" pr="24px" pb="12px" pl="24px">
-          <Styled.StyledTypography>
-            関西LOVERS 〜何度ここへ来てたって大阪弁は上手になれへんし〜
-          </Styled.StyledTypography>
-        </Paper>
-        <Box display="flex" gap={2}>
-          <a href="https://qiita.com">
-            <Image src="/octcat.png" width="24" height="24" alt="SNS icon" />
-          </a>
-          <a href="https://note.com">
-            <Image src="/octcat.png" width="24" height="24" alt="SNS icon" />
-          </a>
-          <a href="https://blog.gorinya.me">
-            <Image src="/octcat.png" width="24" height="24" alt="SNS icon" />
-          </a>
+        <Box
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          gap="8px"
+        >
+          <Typography variant="h6">入社時期：{member.join_date}</Typography>
+          <Box display="flex" flexWrap="wrap" gap="6px">
+            {
+              // TODO: APIの実装が出来次第修正
+              chips.map((chip, i: number) => (
+                <Tag key={i} color={chip.color}>
+                  {chip.value}
+                </Tag>
+              )) ?? "タグがありません。"
+            }
+          </Box>
         </Box>
       </Box>
     </Box>

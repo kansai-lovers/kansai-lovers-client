@@ -12,39 +12,39 @@
  * Do not edit the class manually.
  */
 /**
- * Thread sent by member
+ * Message sent by member
  * @export
- * @interface Thread
+ * @interface Message
  */
-export interface Thread {
+export interface Message {
     /**
      * 
      * @type {string}
-     * @memberof Thread
+     * @memberof Message
      */
-    username: any;
-    /**
-     * 
-     * @type {Date}
-     * @memberof Thread
-     */
-    sendDate: any;
-    /**
-     * 
-     * @type {SkillTag}
-     * @memberof Thread
-     */
-    tag: any;
+    url: any;
     /**
      * 
      * @type {string}
-     * @memberof Thread
+     * @memberof Message
      */
     text: any | null;
     /**
      * 
-     * @type {ThreadStamps}
-     * @memberof Thread
+     * @type {MessageStamps}
+     * @memberof Message
      */
     stamps: any;
+    /**
+     * 
+     * @type {Date}
+     * @memberof Message
+     */
+    created_at: any;
+    /**
+     * 
+     * @type {Date}
+     * @memberof Message
+     */
+    updated_at: any;
 }

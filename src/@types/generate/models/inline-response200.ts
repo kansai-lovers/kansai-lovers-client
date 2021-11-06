@@ -12,27 +12,27 @@
  * Do not edit the class manually.
  */
 /**
- * Statmp member got
+ * 
  * @export
- * @interface Stamp
+ * @interface InlineResponse200
  */
-export interface Stamp {
+export interface InlineResponse200 {
     /**
      * 
-     * @type {number}
-     * @memberof Stamp
+     * @type {Message}
+     * @memberof InlineResponse200
      */
-    design: any;
+    top_communication_message: any;
     /**
      * 
-     * @type {number}
-     * @memberof Stamp
+     * @type {Message}
+     * @memberof InlineResponse200
      */
-    implementation: any;
+    top_implementation_message: any;
     /**
      * 
-     * @type {number}
-     * @memberof Stamp
+     * @type {Message}
+     * @memberof InlineResponse200
      */
-    communication: any;
+    top_design_message: any;
 }

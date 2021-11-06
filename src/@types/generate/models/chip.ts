@@ -12,39 +12,36 @@
  * Do not edit the class manually.
  */
 /**
- * Thread sent by member
+ * Chip
  * @export
- * @interface Thread
+ * @interface Chip
  */
-export interface Thread {
+export interface Chip {
     /**
      * 
      * @type {string}
-     * @memberof Thread
+     * @memberof Chip
      */
-    username: any;
-    /**
-     * 
-     * @type {Date}
-     * @memberof Thread
-     */
-    sendDate: any;
-    /**
-     * 
-     * @type {SkillTag}
-     * @memberof Thread
-     */
-    tag: any;
+    value: any;
     /**
      * 
      * @type {string}
-     * @memberof Thread
+     * @memberof Chip
      */
-    text: any | null;
-    /**
-     * 
-     * @type {ThreadStamps}
-     * @memberof Thread
-     */
-    stamps: any;
+    color: ChipColorEnum;
 }
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum ChipColorEnum {
+    Blue = 'blue',
+    LightBlue = 'lightBlue',
+    Green = 'green',
+    YellowGreen = 'yellowGreen',
+    Yellow = 'yellow',
+    Orange = 'orange',
+    Red = 'red'
+}
+

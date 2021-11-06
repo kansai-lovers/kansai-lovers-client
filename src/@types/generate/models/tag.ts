@@ -12,27 +12,36 @@
  * Do not edit the class manually.
  */
 /**
- * Statmp member got
+ * Tag
  * @export
- * @interface Stamp
+ * @interface Tag
  */
-export interface Stamp {
+export interface Tag {
     /**
      * 
-     * @type {number}
-     * @memberof Stamp
+     * @type {string}
+     * @memberof Tag
      */
-    design: any;
+    value: any;
     /**
      * 
-     * @type {number}
-     * @memberof Stamp
+     * @type {string}
+     * @memberof Tag
      */
-    implementation: any;
-    /**
-     * 
-     * @type {number}
-     * @memberof Stamp
-     */
-    communication: any;
+    color: TagColorEnum;
 }
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum TagColorEnum {
+    Blue = 'blue',
+    LightBlue = 'lightBlue',
+    Green = 'green',
+    YellowGreen = 'yellowGreen',
+    Yellow = 'yellow',
+    Orange = 'orange',
+    Red = 'red'
+}
+

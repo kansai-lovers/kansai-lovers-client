@@ -5,7 +5,20 @@ import { Biography } from ".";
 
 # Biography
 
-export const Template = () => <Biography />;
+export const Template = () => (
+  <Biography
+    member={{
+      login: "hirokikondo86",
+      repoUrl: "http://github.com/hirokikondo86",
+      avatar_url: "/octcat.png",
+      join_date: "2021/04",
+      chips: [
+        { value: "Sample", color: "red" },
+        { value: "Sample", color: "blue" },
+      ],
+    }}
+  />
+);
 
 <Canvas>
   <Story name="Sample">{Template.bind({})}</Story>

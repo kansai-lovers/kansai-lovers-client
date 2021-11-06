@@ -14,55 +14,55 @@
 /**
  * 
  * @export
- * @interface ThreadStamps
+ * @interface MessageStamps
  */
-export interface ThreadStamps {
+export interface MessageStamps {
     /**
      * 
      * @type {number}
-     * @memberof ThreadStamps
+     * @memberof MessageStamps
      */
-    good: any;
+    good_count: any;
     /**
      * 
      * @type {number}
-     * @memberof ThreadStamps
+     * @memberof MessageStamps
      */
-    bad: any;
+    bad_count: any;
     /**
      * 
      * @type {number}
-     * @memberof ThreadStamps
+     * @memberof MessageStamps
      */
-    laugh: any;
+    laugh_count: any;
     /**
      * 
      * @type {number}
-     * @memberof ThreadStamps
+     * @memberof MessageStamps
      */
-    hooray: any;
+    hooray_count: any;
     /**
      * 
      * @type {number}
-     * @memberof ThreadStamps
+     * @memberof MessageStamps
      */
-    confused: any;
+    confused_count: any;
     /**
      * 
      * @type {number}
-     * @memberof ThreadStamps
+     * @memberof MessageStamps
      */
-    heart: any;
+    heart_count: any;
     /**
      * 
      * @type {number}
-     * @memberof ThreadStamps
+     * @memberof MessageStamps
      */
-    rocket: any;
+    rocket_count: any;
     /**
      * 
      * @type {number}
-     * @memberof ThreadStamps
+     * @memberof MessageStamps
      */
-    eyes: any;
+    eyes_count: any;
 }
