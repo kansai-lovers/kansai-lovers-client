@@ -12,39 +12,35 @@
  * Do not edit the class manually.
  */
 /**
- * Thread sent by member
+ * Tag
  * @export
- * @interface Thread
+ * @interface Tag
  */
-export interface Thread {
+export interface Tag {
   /**
    *
    * @type {string}
-   * @memberof Thread
+   * @memberof Tag
    */
-  username: any;
-  /**
-   *
-   * @type {Date}
-   * @memberof Thread
-   */
-  sendDate: any;
-  /**
-   *
-   * @type {SkillTag}
-   * @memberof Thread
-   */
-  tag: any;
+  value: any;
   /**
    *
    * @type {string}
-   * @memberof Thread
+   * @memberof Tag
    */
-  text: any | null;
-  /**
-   *
-   * @type {ThreadStamps}
-   * @memberof Thread
-   */
-  stamps: any;
+  color: TagColorEnum;
+}
+
+/**
+ * @export
+ * @enum {string}
+ */
+export enum TagColorEnum {
+  Blue = "blue",
+  LightBlue = "lightBlue",
+  Green = "green",
+  YellowGreen = "yellowGreen",
+  Yellow = "yellow",
+  Orange = "orange",
+  Red = "red",
 }

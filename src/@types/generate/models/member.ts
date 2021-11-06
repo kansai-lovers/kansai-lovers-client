@@ -41,4 +41,16 @@ export interface Member {
    * @memberof Member
    */
   url: any;
+  /**
+   *
+   * @type {string}
+   * @memberof Member
+   */
+  joinDate: any;
+  /**
+   *
+   * @type {Array&lt;Tag&gt;}
+   * @memberof Member
+   */
+  tags?: any;
 }
