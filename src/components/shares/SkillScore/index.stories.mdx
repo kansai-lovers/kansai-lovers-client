@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { SkillScore } from ".";
+
+<Meta title="shares/SkillScore" component={SkillScore} />
+
+# SkillScore
+
+export const Template = () => (
+  <SkillScore score={{ design: 65, implementation: 45, communication: 30 }} />
+);
+
+<Canvas>
+  <Story name="Sample">{Template.bind({})}</Story>
+</Canvas>

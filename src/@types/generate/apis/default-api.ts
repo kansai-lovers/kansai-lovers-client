@@ -195,7 +195,7 @@ export const DefaultApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMemberById(memberId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Member>> {
+        async getMemberById(memberId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Member>>> {
             const localVarAxiosArgs = await DefaultApiAxiosParamCreator(configuration).getMemberById(memberId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -259,7 +259,7 @@ export const DefaultApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMemberById(memberId: string, options?: any): AxiosPromise<Member> {
+        getMemberById(memberId: string, options?: any): AxiosPromise<Array<Member>> {
             return DefaultApiFp(configuration).getMemberById(memberId, options).then((request) => request(axios, basePath));
         },
         /**

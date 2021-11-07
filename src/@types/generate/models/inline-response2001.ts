@@ -14,49 +14,49 @@
 /**
  * 
  * @export
- * @interface Member
+ * @interface InlineResponse2001
  */
-export interface Member {
+export interface InlineResponse2001 {
     /**
      * 
      * @type {number}
-     * @memberof Member
+     * @memberof InlineResponse2001
      */
     id: any;
     /**
      * 
      * @type {string}
-     * @memberof Member
+     * @memberof InlineResponse2001
      */
     github_name: any;
     /**
      * 
      * @type {string}
-     * @memberof Member
+     * @memberof InlineResponse2001
      */
     name: any;
     /**
      * 
      * @type {string}
-     * @memberof Member
+     * @memberof InlineResponse2001
      */
     avatar_url: any;
     /**
      * 
      * @type {string}
-     * @memberof Member
+     * @memberof InlineResponse2001
      */
     url: any;
     /**
      * 
      * @type {string}
-     * @memberof Member
+     * @memberof InlineResponse2001
      */
     join_date: any;
     /**
      * 
      * @type {Array&lt;Chip&gt;}
-     * @memberof Member
+     * @memberof InlineResponse2001
      */
-    chips: any;
+    chips: any | null;
 }

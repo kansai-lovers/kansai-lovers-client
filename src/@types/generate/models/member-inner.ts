@@ -14,49 +14,49 @@
 /**
  * 
  * @export
- * @interface Member
+ * @interface MemberInner
  */
-export interface Member {
+export interface MemberInner {
     /**
      * 
      * @type {number}
-     * @memberof Member
+     * @memberof MemberInner
      */
     id: any;
     /**
      * 
      * @type {string}
-     * @memberof Member
+     * @memberof MemberInner
      */
     github_name: any;
     /**
      * 
      * @type {string}
-     * @memberof Member
+     * @memberof MemberInner
      */
     name: any;
     /**
      * 
      * @type {string}
-     * @memberof Member
+     * @memberof MemberInner
      */
     avatar_url: any;
     /**
      * 
      * @type {string}
-     * @memberof Member
+     * @memberof MemberInner
      */
     url: any;
     /**
      * 
      * @type {string}
-     * @memberof Member
+     * @memberof MemberInner
      */
     join_date: any;
     /**
      * 
      * @type {Array&lt;Chip&gt;}
-     * @memberof Member
+     * @memberof MemberInner
      */
-    chips: any;
+    chips: any | null;
 }
