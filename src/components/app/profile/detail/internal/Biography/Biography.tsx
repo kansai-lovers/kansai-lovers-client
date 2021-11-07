@@ -20,12 +20,14 @@ export const Biography: VFC<Props> = ({ member }) => {
   return (
     <Box display="flex" flexWrap="wrap" alignItems="center" gap="24px">
       <Box display="flex">
-        <Styled.StyledImage
-          src={member.avatar_url}
-          width="100"
-          height="100"
-          alt="user"
-        />
+        {member.avatar_url && (
+          <Styled.StyledImage
+            src={member.avatar_url}
+            width="100"
+            height="100"
+            alt="user"
+          />
+        )}
         <Box
           display="flex"
           flexDirection="column"
@@ -33,12 +35,12 @@ export const Biography: VFC<Props> = ({ member }) => {
           p="16px"
         >
           <Typography variant="h4" fontWeight="bold">
-            {member.login}
+            {member.name}
           </Typography>
           <Box display="flex" gap="6px" alignItems="center">
             <GitHubIcon fontSize="small" />
             <a href={member.url}>
-              <Typography variant="h6">{member.login}</Typography>
+              <Typography variant="h6">{member.github_name}</Typography>
             </a>
           </Box>
         </Box>
